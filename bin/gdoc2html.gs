@@ -88,6 +88,10 @@ function ConvertGoogleDocToCleanHtml() {
     output.push(processItem(p, consts, false));
   }
   var html = output.join('\n');
+  
+  // debug: what inner html do we generate?
+  DocumentApp.getUi().alert(html);
+  
   var htmlb64 = Utilities.base64Encode(html, Utilities.Charset.UTF_8);
   
   //Check for saved GitHub url and token, else prompt for it.  
